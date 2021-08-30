@@ -1,0 +1,11 @@
+[Unit]
+Description=Dummy Service
+
+[Service]
+ExecStart=sleep 10
+StandardOutput=syslog
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+Alias=docker.service

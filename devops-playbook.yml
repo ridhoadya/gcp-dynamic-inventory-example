@@ -1,0 +1,11 @@
+- name: Testing devops playbook
+  hosts: devops
+  become: yes
+
+  tasks:
+    - name: Testing devops task
+      debug:
+        msg: "{{ ansible_distribution_version }}"
+  
+  roles:
+    - { role: dummyservice }

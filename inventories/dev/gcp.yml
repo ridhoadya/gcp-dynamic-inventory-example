@@ -1,0 +1,12 @@
+plugin: gcp_compute
+projects:
+  - project-dev
+hostnames:
+  - name
+groups:
+  devops: "'devops-' in name"
+compose:
+  ansible_host: networkInterfaces[0].accessConfigs[0].natIP
+  #for static ip use ansible_host: networkInterfaces[0].networkIP
+auth_kind: serviceaccount
+service_account_file: <service_account_file>.json
